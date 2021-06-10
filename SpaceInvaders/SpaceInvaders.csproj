@@ -44,16 +44,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllShipTypes\EnemyShipTypes.cs" />
+    <Compile Include="AllShipTypes\EnemyShip_Type_1.cs" />
+    <Compile Include="AllShipTypes\EnemyShip_Type_2.cs" />
+    <Compile Include="AllShipTypes\EnemyShip_Type_3.cs" />
     <Compile Include="AllShipTypes\PlayerShipTypes.cs" />
     <Compile Include="AllShipTypes\EnemyShip_Type_0.cs" />
     <Compile Include="AllShipTypes\PlayerShip_Type_0.cs" />
+    <Compile Include="AllShipTypes\PlayerShip_Type_1.cs" />
+    <Compile Include="AllShipTypes\PlayerShip_Type_2.cs" />
+    <Compile Include="AllShipTypes\PlayerShip_Type_3.cs" />
     <Compile Include="AllShipTypes\ShipType.cs" />
     <Compile Include="Ammos\Ammo.cs" />
+    <Compile Include="Ammos\EnhancedBullet.cs" />
+    <Compile Include="Ammos\NRC_131_ox.cs" />
     <Compile Include="Ammos\StandardBullet.cs" />
     <Compile Include="EnemyShip.cs" />
     <Compile Include="Game.cs" />
-    <Compile Include="Interfaces\IEnemy.cs" />
-    <Compile Include="Interfaces\IFriendly.cs" />
     <Compile Include="Interfaces\IShootable.cs" />
     <Compile Include="PlayerShip.cs" />
     <Compile Include="Program.cs" />

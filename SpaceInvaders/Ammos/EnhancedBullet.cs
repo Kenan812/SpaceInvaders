@@ -6,25 +6,23 @@ using System.Threading.Tasks;
 
 namespace SpaceInvaders.Ammos
 {
-    class StandardBullet : Ammo
+    class EnhancedBullet : Ammo
     {
         // (x, y) = initial position of the bullet(when it was shot)
-        public StandardBullet(ConsoleKey movingDirection)
+        public EnhancedBullet(ConsoleKey movingDirection)
         {
-            Name = "Standart Bullet";
-            Appearance = "|";
+            Name = "Enhanced Bullet";
+            Appearance = "Y";
 
-            Damage = 20;
+            Damage = 40;
 
             SecondsToMove = 0.05;
 
             AmmoMovingDirection = movingDirection;
         }
 
-       
 
-
-        #region Moving Bullet
+        #region Moving BUllet
 
 
         public override void AmmoClearAppearance()
@@ -41,7 +39,7 @@ namespace SpaceInvaders.Ammos
 
             else if (AmmoMovingDirection == ConsoleKey.DownArrow)
                 Y++;
-            
+
         }
 
 
@@ -53,10 +51,6 @@ namespace SpaceInvaders.Ammos
 
 
         #endregion
-
-
-
-
 
     }
 }

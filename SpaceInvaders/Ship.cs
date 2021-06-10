@@ -33,8 +33,8 @@ namespace SpaceInvaders
         public int PosY { get; set; }
 
 
-        public int HP { get; set; }
-
+        public int HP { get; set; }  // Current HP
+        public int FullHP { get; set; }  // Max amount of hp
 
         #region Constucters
 
@@ -47,12 +47,14 @@ namespace SpaceInvaders
             PosX = -1;  
             PosY = -1;
             HP = hp;
+            FullHP = hp;
         }
 
 
         public Ship()
         {
             HP = 1;
+            FullHP = 1;
             Width = 0;
             Height = 0;
             PosX = -1;

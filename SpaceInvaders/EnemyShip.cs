@@ -91,7 +91,7 @@ namespace SpaceInvaders
         {
             if (PosX != -1 && PosY != -1)
             {
-                if (HP <= 33)
+                if (HP <= FullHP * 0.33)
                     Console.ForegroundColor = ConsoleColor.Red;
 
 

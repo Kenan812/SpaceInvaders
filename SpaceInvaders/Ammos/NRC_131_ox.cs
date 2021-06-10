@@ -6,23 +6,20 @@ using System.Threading.Tasks;
 
 namespace SpaceInvaders.Ammos
 {
-    class StandardBullet : Ammo
+    class NRC_131_ox : Ammo
     {
         // (x, y) = initial position of the bullet(when it was shot)
-        public StandardBullet(ConsoleKey movingDirection)
+        public NRC_131_ox(ConsoleKey movingDirection)
         {
-            Name = "Standart Bullet";
-            Appearance = "|";
+            Name = "NRC_131_ox";
+            Appearance = "֎";
 
-            Damage = 20;
+            Damage = 100;
 
             SecondsToMove = 0.05;
 
             AmmoMovingDirection = movingDirection;
         }
-
-       
-
 
         #region Moving Bullet
 
@@ -41,7 +38,7 @@ namespace SpaceInvaders.Ammos
 
             else if (AmmoMovingDirection == ConsoleKey.DownArrow)
                 Y++;
-            
+
         }
 
 
@@ -53,9 +50,6 @@ namespace SpaceInvaders.Ammos
 
 
         #endregion
-
-
-
 
 
     }

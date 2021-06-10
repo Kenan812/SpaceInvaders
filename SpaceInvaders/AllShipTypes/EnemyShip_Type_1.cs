@@ -2,35 +2,39 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using SpaceInvaders.Ammos;
+using System.Threading.Tasks;
 
 
-/* Test ship type */
+/* Standart ship type */
+
+// Shoots using standart bullet
+// HP = 100
+// 1 canon only
 
 namespace SpaceInvaders.AllShipTypes
 {
-    class EnemyShip_Type_0 : EnemyShipTypes
+    class EnemyShip_Type_1 : EnemyShipTypes
     {
-        public EnemyShip_Type_0() : base()
+        public EnemyShip_Type_1() : base()
         {
-            Appearance = "-------\n -----\n  ---\n   -\n";
+            Appearance = "-/(0)\\-\n<=-Y-=>\n   v\n";
             HealthPoints = 100;
-            
+
             ShipWidth = 7;
-            ShipHeight = 4;
-            
+            ShipHeight = 3;
+
             ShipMainMovingDirection = ConsoleKey.DownArrow;
-            
+
             ShipArmament.Add(new StandardBullet(ConsoleKey.DownArrow));
 
             SecondsToMove = 0.5;
-            ShipTimeToShoot = 2;
+            ShipTimeToShoot = 3;
         }
 
         public override void SpawnAllAmmo(int ShipX, int ShipY)
         {
-            ShipArmament[0].SetAmmoSpawnPosition(ShipX + 3, ShipY + 4);
+            ShipArmament[0].SetAmmoSpawnPosition(ShipX + 3, ShipY + 3);
         }
     }
 }

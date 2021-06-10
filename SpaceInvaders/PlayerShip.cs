@@ -8,8 +8,29 @@ using SpaceInvaders.AllShipTypes;
 
 namespace SpaceInvaders
 {
+    class PlayerShipEventHandler
+    {
+        public string Message { get; set; }
+        public string PrintClearMessaage { get; set; }
+
+
+        public PlayerShipEventHandler(string msg) 
+        { 
+            Message = msg;
+            PrintClearMessaage = "";
+
+            for (int i = 0; i < msg.Length; i++) PrintClearMessaage += " ";
+        }
+    }
+
+
+
     class PlayerShip : Ship, IFriendly, IShootable
     {
+        public delegate void PlayerShipDelegate(object sender, PlayerShipEventHandler eventHandler);
+        public event PlayerShipDelegate SendDeathMessage;
+
+
         // max = 5
         public int Mobility { get; set; }  // speed along X (number of position / click)
 
@@ -39,7 +60,7 @@ namespace SpaceInvaders
         {
             if (PosX != -1 && PosY != -1)
             {
-                if (HP <= 33)
+                if (HP <= FullHP * 0.33)
                     Console.ForegroundColor = ConsoleColor.Red;
 
 
@@ -138,5 +159,16 @@ namespace SpaceInvaders
         {
             ShipType.SpawnAllAmmo(PosX, PosY);
         }
+
+
+        // Resets ship hp and clears player ship on board
+        public void DestroyShip()
+        {
+            HP = FullHP;
+            ClearAppearance();
+            SendDeathMessage?.Invoke(this, new PlayerShipEventHandler( "YOUR SHIP HAS BEEN DESTROYED" ));
+        }
+
+
     }
 }
