@@ -25,7 +25,7 @@ namespace SpaceInvaders
 
 
 
-    class PlayerShip : Ship, IFriendly, IShootable
+    class PlayerShip : Ship, IShootable
     {
         public delegate void PlayerShipDelegate(object sender, PlayerShipEventHandler eventHandler);
         public event PlayerShipDelegate SendDeathMessage;

@@ -9,7 +9,7 @@ using SpaceInvaders.AllShipTypes;
 
 namespace SpaceInvaders
 {
-    class EnemyShip : Ship, IEnemy, IShootable
+    class EnemyShip : Ship, IShootable
     {
 
 
